@@ -166,7 +166,16 @@ export interface CronProps {
    *
    * Default './locale.ts'
    */
-  locale?: Locale
+  locale?: Locale,
+
+  dropDownsMode?: {
+    period?: Mode,
+    months?: Mode,
+    monthDays?: Mode,
+    weekDays?: Mode,
+    hours?: Mode,
+    minutes?: Mode,
+  }
 }
 export interface Locale {
   everyText?: string

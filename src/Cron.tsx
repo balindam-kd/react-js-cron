@@ -59,6 +59,7 @@ export default function Cron(props: CronProps) {
       'minute',
       'reboot',
     ],
+    dropDownsMode,
   } = props
   const internalValueRef = useRef<string>(value)
   const defaultPeriodRef = useRef<PeriodType>(defaultPeriod)
@@ -304,7 +305,7 @@ export default function Cron(props: CronProps) {
                 readOnly={readOnly}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                mode={mode}
+                mode={dropDownsMode?.months ?? mode}
               />
             )}
 
@@ -321,7 +322,7 @@ export default function Cron(props: CronProps) {
                 leadingZero={leadingZero}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                mode={mode}
+                mode={dropDownsMode?.monthDays ?? mode}
               />
             )}
 
@@ -340,7 +341,7 @@ export default function Cron(props: CronProps) {
                 readOnly={readOnly}
                 period={periodForRender}
                 periodicityOnDoubleClick={periodicityOnDoubleClick}
-                mode={mode}
+                mode={dropDownsMode?.weekDays ?? mode}
               />
             )}
 
@@ -359,7 +360,7 @@ export default function Cron(props: CronProps) {
                   clockFormat={clockFormat}
                   period={periodForRender}
                   periodicityOnDoubleClick={periodicityOnDoubleClick}
-                  mode={mode}
+                  mode={dropDownsMode?.hours ?? mode}
                 />
               )}
 
@@ -376,7 +377,7 @@ export default function Cron(props: CronProps) {
                   leadingZero={leadingZero}
                   clockFormat={clockFormat}
                   periodicityOnDoubleClick={periodicityOnDoubleClick}
-                  mode={mode}
+                  mode={dropDownsMode?.minutes ?? mode}
                 />
               )}
 
