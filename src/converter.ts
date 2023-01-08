@@ -79,7 +79,7 @@ export function setValuesFromCronString(
       const period = getPeriodFromCronParts(cronParts)
 
       // cronParts[i] will be [] (empty string) if it's corresp. value of cronString is *
-      if(cronParts.length && (cronParts[0].length && cronParts[1].length)) {
+      if(cronParts.length && (cronParts[0].length === 1 && cronParts[1].length === 1)) {
         setPeriod(period)
         setMinutes(cronParts[0])
         setHours(cronParts[1])
